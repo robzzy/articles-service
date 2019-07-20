@@ -1,0 +1,4 @@
+apiVersion: v1
+description: Manage articles-service k8s chart!
+name: articles-service
+version: 0.1.0

@@ -28,7 +28,7 @@ target_metadata = DeclarativeBase.metadata
 
 
 def build_url():
-    return "mysql+mysqlconnector://{}:{}@{}/{}?charset=utf8".format(
+    return "mysql+mysqlconnector://{}:{}@{}/{}?charset=utf8mb4".format(
         os.getenv("DB_USER", "root"),
         os.getenv("DB_PASSWORD", ""),
         os.getenv("DB_SERVER", "localhost"),

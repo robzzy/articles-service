@@ -88,14 +88,14 @@ class Review(DeclarativeBase):
 
     author_id = Column(
         Integer,
-        ForeignKey("author.id", name="fk_reviews_authors"),
+        ForeignKey("authors.id", name="fk_reviews_authors"),
         nullable=False,
     )
     author = relationship("Author", backref="reviews")
 
     article_id = Column(
         Integer,
-        ForeignKey("article.id", name="fk_reviews_articles"),
+        ForeignKey("articles.id", name="fk_reviews_articles"),
         nullable=False
     )
     article = relationship("Article", backref="reviews")
