@@ -45,6 +45,7 @@ jobs:
 
     steps:
       - checkout
+      - setup_remote_docker
 
       - run:
           name: build images
@@ -62,6 +63,7 @@ jobs:
 
     steps:
       - checkout
+      - setup_remote_docker
 
       - attach_workspace:
           at: docker-images

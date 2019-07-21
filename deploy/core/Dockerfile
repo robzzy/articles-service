@@ -10,7 +10,7 @@ FROM service-base AS install
 
 COPY --from=wheels /application/wheelhouse /wheelhouse
 
-RUN pip install --no-index -f /wheelhouse users
+RUN pip install --no-index -f /wheelhouse articles
 
 # ----------------------------------
 

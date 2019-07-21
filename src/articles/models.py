@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-from enum import Enum
 
 from sqlalchemy import Column, String, Integer, DateTime, ForeignKey, Text
 from sqlalchemy.ext.declarative import declarative_base
@@ -8,6 +7,7 @@ from sqlalchemy.orm import relationship
 from sqlalchemy_utils import ChoiceType
 
 from articles.utils import utcnow
+from articles.constants import Gender, ArticleStatus
 
 
 class ModelBase:
@@ -17,25 +17,6 @@ class ModelBase:
 
 
 DeclarativeBase = declarative_base(cls=ModelBase)
-
-
-class ArticleStatus(Enum):
-
-    WRITING = "writing"
-    """author are writing article, not ready to display."""
-
-    UN_PUBLISH = "un_publish"
-    """author finished, but he/she do not want to display right now."""
-
-    PUBLISHED = "published"
-    """Ready to display!!!"""
-
-
-class Gender(Enum):
-
-    MALE = "male"
-
-    FEMALE = "female"
 
 
 class Author(DeclarativeBase):

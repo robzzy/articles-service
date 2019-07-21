@@ -46,7 +46,7 @@ build: build-base
 
 docker-save:
 	mkdir -p docker-images
-	docker save -o docker images/articles-service.tar $(foreach image, $(IMAGE), articles-service-$(image):$(TAG))
+	docker save -o docker-images/articles-service.tar $(foreach image, $(IMAGES), articles-service-$(image):$(TAG))
 
 docker-load:
 	docker load -i docker-images/articles-service.tar
