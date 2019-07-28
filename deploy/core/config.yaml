@@ -1,5 +1,5 @@
 DB_URIS:
-    "users:Base": mysql+mysqlconnector://${DB_USER:root}:${DB_PASSWORD:}@${DB_SERVER:localhost}/${DB_NAME:articles}
+    "articles:Base": mysql+mysqlconnector://${DB_USER:root}:${DB_PASSWORD:}@${DB_SERVER:localhost}/${DB_NAME:articles}
 
 AMQP_URI: amqp://${RABBIT_USER:guest}:${RABBIT_PASS:guest}@${RABBIT_SERVER:localhost}:${RABBIT_PORT:5672}/${RABBIT_VHOST:}
 
@@ -14,7 +14,7 @@ LOGGING:
             (): nameko_tracer.filters.TruncateResponseFilter
     formatters:
         default:
-            format: "%(asctime)-15s [%(levelname)-4s] [users-service] [%(name)-12s] %(message)s"
+            format: "%(asctime)-15s [%(levelname)-4s] [articles-service] [%(name)-12s] %(message)s"
         tracer:
             (): nameko_tracer.formatters.JSONFormatter
     handlers:
