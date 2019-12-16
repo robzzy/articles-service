@@ -1,4 +1,4 @@
-FROM users-base
+FROM articles-base
 
 ENV WEB_SERVER_ADDRESS 0.0.0.:8000
 
