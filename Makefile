@@ -14,6 +14,7 @@ CONTEXT ?= david.k8s.local
 NAMESPACE ?= demo
 RELEASE_NAME := articles-service
 CHART_FOLDER_NAME ?= articles-service
+PROJECT_DOCKER_HOST ?= zengzhiyuan
 
 install-dependencies:
 	pip install -U -e ".[dev]"
