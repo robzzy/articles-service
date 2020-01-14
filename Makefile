@@ -11,7 +11,7 @@ HTMLCOV_DIR ?= htmlcov
 IMAGES := core migrations
 
 CONTEXT ?= david.k8s.local
-NAMESPACE ?= demo
+NAMESPACE ?= default
 RELEASE_NAME := articles-service
 CHART_FOLDER_NAME ?= articles-service
 PROJECT_DOCKER_HOST ?= zengzhiyuan
@@ -71,10 +71,6 @@ push-images:
 
 
 # k8s
-deploy-namespace:
-	kubectl --context=$(CONTEXT) apploy -f deploy/k8s/namespace.yaml
-
-
 # helm
 test-chart:
 	helm upgrade $(RELEASE_NAME) deploy/k8s/charts/$(CHART_FOLDER_NAME) --install \
