@@ -78,7 +78,7 @@ test-chart:
 	--dry-run --debug --set image.tag=$(TAG);
 
 install-chart:
-	helm upgrade $(RELEASE_NAME) deploy/k8s/charts/$(CHART_FOLDER_NAME) --install \
+	helm upgrade articles-service deploy/k8s/charts/$(CHART_FOLDER_NAME) --install \
 	--namespace=$(NAMESPACE) --kube-context=$(CONTEXT) \
 	--set image.tag=$(TAG) \
 	--set run_migrations=$(RUN_MIGRATIONS) \
