@@ -22,7 +22,7 @@ install-dependencies:
 
 # test
 coverage-html:
-	coverage html -d $(HTMLCOV_DIR) --fail-under 60
+	coverage html -d $(HTMLCOV_DIR)
 
 coverage-report:
 	coverage report -m
