@@ -45,9 +45,7 @@ class Article(DeclarativeBase):
     )
     click_num = Column(Integer, nullable=True, default=0)
     author_id = Column(
-        Integer,
-        ForeignKey("authors.id", name="fk_articles_authors"),
-        nullable=False,
+        Integer, ForeignKey("authors.id", name="fk_articles_authors"), nullable=False,
     )
     author = relationship("Author", backref="articles")
 
@@ -68,15 +66,11 @@ class Review(DeclarativeBase):
     content = Column(String(256), nullable=True)
 
     author_id = Column(
-        Integer,
-        ForeignKey("authors.id", name="fk_reviews_authors"),
-        nullable=False,
+        Integer, ForeignKey("authors.id", name="fk_reviews_authors"), nullable=False,
     )
     author = relationship("Author", backref="reviews")
 
     article_id = Column(
-        Integer,
-        ForeignKey("articles.id", name="fk_reviews_articles"),
-        nullable=False
+        Integer, ForeignKey("articles.id", name="fk_reviews_articles"), nullable=False
     )
     article = relationship("Article", backref="reviews")
