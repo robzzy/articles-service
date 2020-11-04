@@ -16,6 +16,8 @@ RELEASE_NAME := articles-service
 CHART_FOLDER_NAME ?= articles-service
 PROJECT_DOCKER_HOST ?= zengzhiyuan
 
+DB_REVISION ?= head
+
 install-dependencies:
 	pip install -U -e ".[dev]"
 
@@ -75,7 +77,9 @@ push-images:
 test-chart:
 	helm upgrade $(RELEASE_NAME) deploy/k8s/charts/$(CHART_FOLDER_NAME) --install \
 	--namespace=$(NAMESPACE) --kube-context=$(CONTEXT) \
-	--dry-run --debug --set image.tag=$(TAG);
+	--dry-run --debug \
+	--set image.tag=$(TAG) \
+	--set db_revision=$(DB_REVISION);
 
 install-chart:
 	helm upgrade articles-service deploy/k8s/charts/$(CHART_FOLDER_NAME) --install \
