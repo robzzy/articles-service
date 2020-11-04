@@ -1,4 +1,4 @@
-apiVersion: apps/v1beta2
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ .Chart.Name }}
@@ -24,9 +24,7 @@ spec:
             - containerPort: 8000
           envFrom:
             - configMapRef:
-                name: common-rabbit
-            - configMapRef:
-                name: common-mysql
+                name: common
             - secretRef:
                 name: common
       restartPolicy: Always

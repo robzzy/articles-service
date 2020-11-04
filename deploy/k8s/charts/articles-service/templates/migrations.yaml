@@ -24,11 +24,9 @@ spec:
         - image: zengzhiyuan/articles-service-migrations:{{ .Values.image.tag }}
           name: {{ .Chart.Name }}-migrations
           envFrom:
-            - ConfigMapRef:
-                name: common-rabbit
-            - ConfigMapRef:
-                name: common-mysql
-            - SecretRef:
+            - configMapRef:
+                name: common
+            - secretRef:
                 name: common
           env:
             - name: REVISION

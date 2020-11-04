@@ -10,7 +10,7 @@ endif
 HTMLCOV_DIR ?= htmlcov
 IMAGES := core migrations
 
-CONTEXT ?= david.k8s.local
+CONTEXT ?= minikube
 NAMESPACE ?= default
 RELEASE_NAME := articles-service
 CHART_FOLDER_NAME ?= articles-service
