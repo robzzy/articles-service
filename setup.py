@@ -21,9 +21,9 @@ setup(
     ],
     extras_require={
         "dev": [
+            "pytest==6.0.1",
             "coverage==4.5.3",
             "flake8>=3.7.7",
-            "pytest==4.5.0",
             "black==19.10b0",
         ]
     },

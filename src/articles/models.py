@@ -28,7 +28,7 @@ class Author(DeclarativeBase):
     gender = Column(ChoiceType(Gender), nullable=True)
     birth = Column(DateTime, nullable=True)
     location = Column(String(64), nullable=True)
-    user_uuid = Column(String(36), nullable=False, unique=True)
+    user_uuid = Column(String(36), nullable=True, unique=True)
 
 
 class Article(DeclarativeBase):

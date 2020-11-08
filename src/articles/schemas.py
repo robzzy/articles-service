@@ -26,7 +26,7 @@ class ArticleSchema(Schema):
     content = fields.String(allow_none=True)
     status = fields.String(allow_none=True)
     click_num = fields.Integer(dump_only=True)
-    author_id = fields.Integer()
+    author_id = fields.Integer(default=1)
 
     @pre_dump
     def handle_status_to_enum(self, article):
