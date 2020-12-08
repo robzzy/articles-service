@@ -12,7 +12,7 @@ setup(
     package_dir={"": "src"},
     install_requires=[
         "alembic==1.0.10",
-        "nameko==2.12.0",
+        "nameko==3.0.0-rc9",
         "nameko-sqlalchemy==1.5.0",
         "nameko-tracer==1.2.0",
         "nameko-autocrud==0.2.0",
@@ -24,7 +24,7 @@ setup(
             "pytest==6.0.1",
             "coverage==4.5.3",
             "flake8>=3.7.7",
-            "black==19.10b0",
+            "black==20.8b1",
         ]
     },
     zip_safe=True,

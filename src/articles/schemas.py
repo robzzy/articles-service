@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
+import uuid
 
-from marshmallow import Schema, fields, pre_dump
+from marshmallow import Schema, fields, pre_dump, pre_load
+
+from articles.constants import Gender, ArticleStatus
 
 
 class AuthorSchema(Schema):
@@ -10,11 +13,17 @@ class AuthorSchema(Schema):
     gender = fields.String()
     birth = fields.DateTime()
     location = fields.String()
-    user_uuid = fields.String(load_from="uuid", allow_none=False)
+    user_uuid = fields.String(allow_none=False)
+
+    @pre_load
+    def generate_user_uuid(self, data):
+        if not data.get("user_uuid"):
+            data["user_uuid"] = str(uuid.uuid4())
+        return data
 
     @pre_dump
     def handle_gender_to_enum(self, author):
-        if author.gender:
+        if isinstance(author.gender, Gender):
             author.gender = author.gender.value
         return author
 
@@ -30,7 +39,8 @@ class ArticleSchema(Schema):
 
     @pre_dump
     def handle_status_to_enum(self, article):
-        article.status = article.status.value
+        if isinstance(article.status, ArticleStatus):
+            article.status = article.status.value
         return article
 
 
