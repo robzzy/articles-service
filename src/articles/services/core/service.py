@@ -20,7 +20,7 @@ class ArticleService(AuthorMixin, ReviewMixin, ArticleMixin):
 
     tracer = Tracer()
     db_session = DatabaseSession(DeclarativeBase)
-    event_dispatch = EventDispatcher()
+    event_dispatcher = EventDispatcher()
 
     @http("GET", "/healthcheck")
     def health_check_http(self, request):
