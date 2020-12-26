@@ -1,4 +1,3 @@
-
 FROM python-base:latest as base
 
 ADD wheelhouse /application/wheelhouse
