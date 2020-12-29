@@ -17,6 +17,7 @@ CHART_FOLDER_NAME ?= articles-service
 PROJECT_DOCKER_HOST ?= zengzhiyuan
 
 DB_REVISION ?= head
+RUN_MIGRATIONS ?= true
 
 install-dependencies:
 	pip install -U -e ".[dev]"
